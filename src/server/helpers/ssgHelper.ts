@@ -5,7 +5,7 @@ import type { GetStaticProps } from "next";
 import { createServerSideHelpers } from "@trpc/react-query/server";
 
 export const generateSSgHelper = () => {
-  return screateServerSideHelpers({
+  return createServerSideHelpers({
     router: appRouter,
     ctx: { prisma, userId: null },
     transformer: superjson, // optional - adds superjson serialization
