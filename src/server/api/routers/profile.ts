@@ -16,12 +16,12 @@ export const profileRouter = createTRPCRouter({
         username: [input.username],
       });
 
-      if (!user) {
+      if (!user.length) {
         throw new TRPCError({
           code: "NOT_FOUND",
         });
       }
 
-      return user;
+      return user[0];
     }),
 });
